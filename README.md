@@ -105,18 +105,8 @@ Example:
 000002_add_email_index.down.sql
 ```
 
-> **Note:** I prefer zero-padded 6-digit version numbers (e.g. `000001`) over plain integers — it keeps `ls` output sorted correctly without relying on `sort -n`.
+> **Note:** I prefer zero-padded 6-digit version numbers (e.g. `000001`) for consistent lexicographic ordering, especially in projects that may grow beyond 999 migrations.
 
-## Development
+## Notes
 
-```bash
-# Run tests
-go test ./...
-
-# Run linter
-golangci-lint run
-
-# Build CLI
-go build -o bin/migrate ./cmd/migrate
-
-```
+This is a personal fork used for learning and experimentation. For production use, consider the upstream [golang-migrate/migrate](https://github.com/golang-migrate/migrate) project.
