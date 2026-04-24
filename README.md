@@ -54,6 +54,9 @@ migrate -path ./migrations -database "postgres://localhost:5432/mydb?sslmode=dis
 
 # Force set migration version (use to fix dirty state)
 migrate -path ./migrations -database "postgres://localhost:5432/mydb?sslmode=disable" force 3
+
+# Roll back ALL migrations (use with caution in production!)
+migrate -path ./migrations -database "postgres://localhost:5432/mydb?sslmode=disable" down -all
 ```
 
 ## Library Usage
@@ -102,6 +105,8 @@ Example:
 000002_add_email_index.down.sql
 ```
 
+> **Note:** I prefer zero-padded 6-digit version numbers (e.g. `000001`) over plain integers — it keeps `ls` output sorted correctly without relying on `sort -n`.
+
 ## Development
 
 ```bash
@@ -113,18 +118,5 @@ golangci-lint run
 
 # Build CLI
 go build -o bin/migrate ./cmd/migrate
+
 ```
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feat/my-feature`)
-3. Commit your changes (`git commit -m 'feat: add my feature'`)
-4. Push to the branch (`git push origin feat/my-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
