@@ -105,7 +105,7 @@ Example:
 000002_add_email_index.down.sql
 ```
 
-> **Note:** I prefer zero-padded 6-digit version numbers (e.g. `000001`) for consistent lexicographic ordering, especially in projects that may grow beyond 999 migrations.
+> **Note:** I prefer zero-padded 6-digit version numbers (e.g. `000001`) for consistent ordering in the filesystem. The library itself accepts any positive integer, but keeping filenames consistently padded avoids sorting surprises.
 
 ## Notes
 
