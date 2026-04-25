@@ -105,8 +105,8 @@ Example:
 000002_add_email_index.down.sql
 ```
 
-> **Note:** I prefer zero-padded 6-digit version numbers (e.g. `000001`) for consistent lexicographic ordering, especially when migration counts grow large.
+> **Note:** I prefer zero-padded 6-digit version numbers (e.g. `000001`) over plain integers — it keeps directory listings sorted correctly and makes the sequence easier to read at a glance.
 
 ## License
 
-[MIT](LICENSE)
+MIT
