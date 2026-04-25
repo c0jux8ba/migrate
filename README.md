@@ -105,8 +105,8 @@ Example:
 000002_add_email_index.down.sql
 ```
 
-> **Note:** I prefer zero-padded 6-digit version numbers (e.g. `000001`) for consistent ordering in the filesystem. The library accepts any positive integer, but keeping a fixed width avoids sorting surprises when you exceed 9 migrations.
+> **Note:** I prefer zero-padded 6-digit version numbers (e.g. `000001`) for consistent lexicographic ordering, especially when migrations exceed 999 files.
 
 ## License
 
-MIT
+MIT — see [LICENSE](./LICENSE) for details.
