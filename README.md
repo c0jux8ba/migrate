@@ -105,8 +105,11 @@ Example:
 000002_add_email_index.down.sql
 ```
 
-> **Note:** I prefer zero-padded 6-digit version numbers (e.g. `000001`) for consistent lexicographic ordering, especially in projects that may grow beyond 999 migrations.
+> **Note:** I prefer zero-padded 6-digit version numbers (e.g. `000001`) for consistent lexicographic ordering, especially when the number of migrations grows large.
 
-## License
+## Personal Notes
 
-MIT — see [LICENSE](./LICENSE) for details.
+This fork is primarily used for learning and experimenting with database migration patterns. Main areas of interest:
+
+- Testing migration rollback strategies in CI environments
+- Exploring how dirty state recovery works under concurrent access
